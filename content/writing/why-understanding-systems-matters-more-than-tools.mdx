@@ -1,0 +1,39 @@
+---
+title: Why Understanding Systems Matters More Than Tools
+publishedAt: 2026-03-01
+readingTime: 4 min read
+---
+
+Frameworks get deprecated. Syntax changes. The instinct to understand what's actually happening under the hood — that's what compounds.
+
+Every few years, something new arrives that promises to be the last thing you need to learn. It never is. The engineers who don't get caught in this cycle are the ones who learned to think about systems, not just tools.
+
+## The Tool Trap
+
+It's easy to learn a tool. The documentation exists. The tutorials are plentiful. You can become productive in days.
+
+It's harder to learn what the tool is *doing*. What abstractions it's built on. What trade-offs it's making. Where it will fail you.
+
+The engineers who get caught flat-footed when tools change are the ones who learned the surface and stopped there. They know how to use React, but not how the virtual DOM works. They can write SQL, but don't understand the query planner. They deploy to AWS but have never thought about what a request actually does between the edge and their database.
+
+## Why Systems Thinking Survives
+
+The internet hasn't fundamentally changed how HTTP works. Databases still need indexes. CPU caches still matter. Networks still have latency. Memory is still finite.
+
+These constraints are stable. The tools that solve them change. If you understand the constraint, you can reason about any tool built to address it.
+
+This is what "fundamentals" actually means — not textbook knowledge, but the ability to reason about a system's behavior from its properties.
+
+## How It Compounds
+
+Understanding systems isn't just about debugging. It makes you faster at learning new tools because you recognize the underlying pattern. It makes you better at evaluating trade-offs because you understand what's actually being traded. It makes you more confident in production because you know how to reason about failure modes.
+
+Each system you understand deeply makes the next one faster to learn.
+
+## The Practical Version
+
+You don't need to understand everything at every level of the stack simultaneously. But you should, over time, push past the documentation and understand *how* your most critical tools work.
+
+Read the source code. Reproduce a simple version. Break it on purpose. Ask why it's designed the way it is.
+
+The investment is front-loaded. The returns compound.

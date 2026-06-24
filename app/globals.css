@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────────── */
+@theme inline {
+  /* Colors */
+  --color-background:           #0D1117;
+  --color-card:                 #161B22;
+  --color-border:               #30363D;
+  --color-foreground:           #F0F4F8;
+  --color-foreground-secondary: #C4CDD9;
+  --color-muted:                #8A9BB0;
+  --color-gold:                 #C9A85C;
+
+  /* Typography */
+  --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body:    var(--font-inter),      ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    var(--font-geist-mono), ui-monospace,  monospace;
+  --font-sans:    var(--font-geist-sans);
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Lenis owns smooth scrolling */
+  scroll-behavior: auto;
+  text-rendering:  optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color:       #0D1117;
+  color:                  #F0F4F8;
+  font-family:            var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin:  0;
+  padding: 0;
+}
+
+/* ─── Lenis ──────────────────────────────────────────────────────── */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────── */
+::selection {
+  background-color: rgb(201 168 92 / 0.18);
+  color: #C9A85C;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #0D1117; }
+::-webkit-scrollbar-thumb { background: #30363D; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #8A9BB0; }
+
+/* ─── Focus Ring ─────────────────────────────────────────────────── */
+:focus-visible {
+  outline:        2px solid rgb(201 168 92 / 0.7);
+  outline-offset: 3px;
+  border-radius:  4px;
+  transition:     outline-color 0.15s ease;
+}
+
+/* ─── Skip to content ────────────────────────────────────────────── */
+.skip-link {
+  position:   absolute;
+  top:        -9999px;
+  left:       1rem;
+  padding:    0.5rem 1rem;
+  background: #161B22;
+  color:      #F0F4F8;
+  border:     1px solid #30363D;
+  border-radius: 6px;
+  font-size:  0.875rem;
+  z-index:    9999;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ─── Anchor scroll offset (clears fixed navbar) ────────────────── */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:       0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:      0.01ms !important;
+    scroll-behavior:          auto   !important;
+  }
+}
