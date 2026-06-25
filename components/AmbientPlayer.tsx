@@ -246,8 +246,8 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
         whileTap={{ scale: 0.92 }}
         aria-label="Ambient mode"
         aria-expanded={open}
-        className="relative flex h-8 w-8 items-center justify-center rounded-full
-                   border border-border/40 bg-card/70 text-[0.9rem] backdrop-blur-sm
+        className="relative flex h-11 w-11 items-center justify-center rounded-full
+                   border border-border/40 bg-card/70 text-[1.1rem] backdrop-blur-sm
                    text-muted/45 transition-all duration-300
                    hover:border-border/70 hover:text-muted/80"
       >
@@ -273,11 +273,11 @@ export function AmbientPlayer({ className }: AmbientPlayerProps = {}) {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -6 }}
-            animate={{ opacity: 1, scale: 1,    y: 0  }}
-            exit={{    opacity: 0, scale: 0.95, y: -6 }}
+            initial={{ opacity: 0, scale: 0.95, y: 6 }}
+            animate={{ opacity: 1, scale: 1,    y: 0 }}
+            exit={{    opacity: 0, scale: 0.95, y: 6 }}
             transition={{ duration: 0.16, ease: EASE }}
-            className="absolute right-0 mt-2 w-36 origin-top-right overflow-hidden
+            className="absolute right-0 bottom-full mb-2 w-36 origin-bottom-right overflow-hidden
                        rounded-xl border border-border/60 bg-card/90 p-1.5
                        shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-sm"
           >

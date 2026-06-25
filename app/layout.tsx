@@ -6,6 +6,7 @@ import { Atmosphere }   from "@/components/Atmosphere";
 import { MouseGlow }    from "@/components/MouseGlow";
 import { ProgressBar }  from "@/components/ProgressBar";
 import { Navbar }       from "@/components/Navbar";
+import { AmbientPlayer } from "@/components/AmbientPlayer";
 import { SiteFooter }   from "@/components/SiteFooter";
 import "./globals.css";
 
@@ -45,8 +46,11 @@ export default function RootLayout({
             {/* z 50   1 px scroll-progress bar */}
             <ProgressBar />
 
-            {/* z 40   site navigation + ambient player */}
+            {/* z 40   site navigation */}
             <Navbar />
+
+            {/* z 50   ambient player — fixed bottom-right */}
+            <AmbientPlayer className="fixed bottom-5 right-5 z-50" />
 
             <div id="main-content">
               {children}

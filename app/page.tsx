@@ -3,6 +3,7 @@ import { About } from "@/sections/About";
 import { Principles } from "@/sections/Principles";
 import { Exploring } from "@/sections/Exploring";
 import { Journey } from "@/sections/Journey";
+import { Skills } from "@/sections/Skills";
 import { FeaturedWork } from "@/sections/FeaturedWork";
 import { Statement } from "@/sections/Statement";
 import { Writing } from "@/sections/Writing";
@@ -18,6 +19,7 @@ export default function Home() {
       <Principles />
       <Exploring />
       <Journey />
+      <Skills />
       <Statement />
       <FeaturedWork />
       <Writing />

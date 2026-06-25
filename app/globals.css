@@ -80,6 +80,23 @@ html.lenis body {
   transition:     outline-color 0.15s ease;
 }
 
+/* ─── Navbar link entrance ───────────────────────────────────────── */
+@keyframes nav-in {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.nav-link {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
 /* ─── Skip to content ────────────────────────────────────────────── */
 .skip-link {
   position:   absolute;
