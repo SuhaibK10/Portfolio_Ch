@@ -67,7 +67,7 @@ export function FeaturedWork() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          <SectionHeading eyebrow="Selected" title="Featured Work" />
+          <SectionHeading title="Projects" />
         </motion.div>
 
         <motion.ul

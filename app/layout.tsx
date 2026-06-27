@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { geistSans, geistMono, inter, cormorant } from "@/lib/fonts";
+import { Playfair_Display } from "next/font/google";
+import { geistSans, geistMono, inter } from "@/lib/fonts";
 import { SmoothScrollProvider }  from "@/components/providers/SmoothScrollProvider";
 import { MotionProvider }        from "@/components/providers/MotionProvider";
 import { Atmosphere }   from "@/components/Atmosphere";
@@ -8,6 +9,12 @@ import { Navbar }       from "@/components/Navbar";
 import { AmbientPlayer } from "@/components/AmbientPlayer";
 import { SiteFooter }   from "@/components/SiteFooter";
 import "./globals.css";
+
+const playfair = Playfair_Display({
+  subsets:  ["latin"],
+  weight:   ["400", "700"],
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${cormorant.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${playfair.variable}`}
     >
       <body className="bg-background text-foreground font-body antialiased overflow-x-hidden">
 

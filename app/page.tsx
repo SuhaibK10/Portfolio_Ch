@@ -3,6 +3,7 @@ import { About } from "@/sections/About";
 import { Exploring } from "@/sections/Exploring";
 import { Journey } from "@/sections/Journey";
 import { Competitions } from "@/sections/Competitions";
+import { Research } from "@/sections/Research";
 import { Skills } from "@/sections/Skills";
 import { FeaturedWork } from "@/sections/FeaturedWork";
 import { Statement } from "@/sections/Statement";
@@ -16,12 +17,13 @@ export default function Home() {
     <main>
       <Hero />
       <About />
-      <Exploring />
       <Journey />
+      <FeaturedWork />
+      <Research />
       <Competitions />
+      <Exploring />
       <Skills />
       <Statement />
-      <FeaturedWork />
       <Writing />
       <Now />
       <BeyondCode />

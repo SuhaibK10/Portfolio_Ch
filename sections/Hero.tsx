@@ -101,13 +101,13 @@ export function Hero() {
             {...fadeUp(0.52)}
             className="mt-6 flex items-baseline justify-center gap-2"
           >
-            {/* Static "I" — Cormorant Garamond italic, signature weight */}
+            {/* Static "I" — Playfair Display */}
             <span
-              className="leading-none text-foreground
-                         text-[2.1rem] sm:text-[3rem] lg:text-[3.6rem]"
+              className="leading-none text-muted/60 text-[1.25rem] sm:text-[1.75rem] lg:text-[2.25rem]"
               style={{
-                fontFamily: "var(--font-cormorant)",
-                fontWeight: 600,
+                fontFamily: "var(--font-playfair)",
+                fontWeight: 700,
+                lineHeight: 1,
               }}
             >
               I
@@ -116,7 +116,7 @@ export function Hero() {
             {/* Slot — font-size set here so height: 1em resolves correctly */}
             <span
               className="relative inline-block overflow-hidden
-                         text-[1.75rem] sm:text-[2.5rem] lg:text-[3rem]"
+                         text-[1.25rem] sm:text-[1.75rem] lg:text-[2.25rem]"
               style={{ height: "1em", lineHeight: 1 }}
             >
               {/* Ghost: holds width of longest word */}
