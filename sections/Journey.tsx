@@ -9,44 +9,50 @@ import { SectionHeading } from "@/components/SectionHeading";
 /* ─── Data ─────────────────────────────────────────────────────────── */
 
 const TIMELINE = [
-    {
-    role:        "Product Engineer",
-    company:     "Louis Polo",
-    logo:        "/louispolo.png",
-    logoSize:    "lg" as const,
-    period:      "Sep 2025 – Apr 2026",
-    description:
-      "Built and deployed a complete e-commerce platform and internal inventory systems.",
+  {
+    role:     "Product Engineer",
+    company:  "Louis Polo",
+    logo:     "/louispolo.png",
+    logoSize: "lg" as const,
+    period:   "Sep 2025 – Apr 2026",
+    bullets: [
+      "Built and deployed a full e-commerce platform from scratch.",
+      "Developed internal inventory and order management systems.",
+    ],
   },
   {
-    role:        "ML and Research Head",
-    company:     "Faast FinTech Club",
-    logo:        "/faast.png",
-    logoSize:    "sm" as const,
-    period:      "Oct 2025 – Present",
-    description:
-      "Leading research and AI initiatives at the intersection of finance and technology.",
+    role:     "ML and Research Head",
+    company:  "Faast FinTech Club",
+    logo:     "/faast.png",
+    logoSize: "sm" as const,
+    period:   "Oct 2025 – Present",
+    bullets: [
+      "Leading AI and ML research initiatives for the club.",
+      "Working at the intersection of finance and machine learning.",
+    ],
   },
-
   {
-    role:        "ML Intern",
-    company:     "IIT Jammu",
-    logo:        "/iitjammu.png",
-    logoSize:    "xl" as const,
-    period:      "June 2025 – Aug 2025",
-    description:
-      "Worked on applied AI and generative AI workflows and practical machine learning systems.",
+    role:     "ML Intern",
+    company:  "IIT Jammu",
+    logo:     "/iitjammu.png",
+    logoSize: "xl" as const,
+    period:   "June 2025 – Aug 2025",
+    bullets: [
+      "Worked on applied AI and generative AI workflows.",
+      "Built practical machine learning systems under research supervision.",
+    ],
   },
-
   {
-    role:        "Founder",
-    company:     "Weblicate",
-    logo:        "/weblicate.png",
-    logoSize:    "2xl" as const,
-    period:      "Nov 2024 – Present",
-    description: "Shipped websites and MVPs for startups and businesses.",
+    role:     "Founder",
+    company:  "Weblicate",
+    logo:     "/weblicate.png",
+    logoSize: "2xl" as const,
+    period:   "Nov 2024 – Present",
+    bullets: [
+      "Shipped websites and MVPs for startups and small businesses.",
+      "Handled full project lifecycle from design to deployment.",
+    ],
   },
- 
 ] as const;
 
 /* ─── Motion ────────────────────────────────────────────────────────── */
@@ -162,15 +168,21 @@ export function Journey() {
 
                   {/* Period */}
                   <p className="mt-1 font-mono text-[0.6875rem] tracking-[0.12em]
-                                text-muted/55">
+                                text-muted/70">
                     {entry.period}
                   </p>
 
-                  {/* Description */}
-                  <p className="mt-3 font-body text-sm leading-relaxed
-                                text-foreground-secondary">
-                    {entry.description}
-                  </p>
+                  {/* Bullets */}
+                  <ul className="mt-3 space-y-1.5">
+                    {entry.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2">
+                        <span className="mt-[0.4rem] h-1 w-1 shrink-0 rounded-full bg-gold/60" />
+                        <span className="font-body text-sm leading-relaxed text-foreground-secondary">
+                          {b}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
 
               </div>

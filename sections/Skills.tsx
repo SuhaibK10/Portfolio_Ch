@@ -235,7 +235,7 @@ export function Skills() {
 
               {/* Category label */}
               <p className="mb-4 font-mono text-[0.625rem] tracking-[0.22em]
-                            uppercase text-muted/40">
+                            uppercase text-muted/60">
                 {cat.label}
               </p>
 

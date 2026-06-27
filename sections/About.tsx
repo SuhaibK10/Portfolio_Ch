@@ -42,14 +42,14 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.65, ease: EASE }}
-            className="mb-10 w-48 overflow-hidden rounded-xl ring-1 ring-border/20"
+            className="mb-10 h-36 w-36 overflow-hidden rounded-full ring-1 ring-border/30"
           >
             <Image
               src="/avatar.jpg"
               alt="Suhaib Khan"
-              width={192}
-              height={240}
-              className="w-full object-cover"
+              width={144}
+              height={144}
+              className="h-full w-full object-cover"
             />
           </motion.div>
 

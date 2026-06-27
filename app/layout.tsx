@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { geistSans, geistMono, inter } from "@/lib/fonts";
+import { geistSans, geistMono, inter, cormorant } from "@/lib/fonts";
 import { SmoothScrollProvider }  from "@/components/providers/SmoothScrollProvider";
 import { MotionProvider }        from "@/components/providers/MotionProvider";
 import { Atmosphere }   from "@/components/Atmosphere";
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${cormorant.variable}`}
     >
       <body className="bg-background text-foreground font-body antialiased overflow-x-hidden">
 

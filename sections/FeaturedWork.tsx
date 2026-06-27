@@ -99,12 +99,12 @@ export function FeaturedWork() {
                   {/* Header */}
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-[0.625rem] tracking-widest
-                                     text-muted/35">
+                                     text-muted/60">
                       {p.index}
                     </span>
                     <span className="rounded-full border border-border/40
                                      px-2.5 py-0.5 font-mono text-[0.625rem]
-                                     tracking-wide text-muted/50">
+                                     tracking-wide text-muted/70">
                       {p.tag}
                     </span>
                   </div>

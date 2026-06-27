@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FileText, ArrowUpRight } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/BrandIcons";
 import { Container } from "@/components/Container";
@@ -9,13 +10,7 @@ import { Button } from "@/components/Button";
 
 /* ─── Content ─────────────────────────────────────────────────────── */
 
-const ROLES = ["Engineer", "Builder", "Systems Thinker"] as const;
-
-const DESCRIPTION = [
-  "Exploring how AI is changing software, work and leverage.",
-  "Building systems, products and ideas with AI.",
-  "Interested in intelligence, software, markets and enduring businesses.",
-] as const;
+const WORDS = ["Think", "Research", "Write", "Code", "Deploy", "Document"] as const;
 
 const MANIFESTO = [
   "Think.", "Write.", "Engineer.", "Code.",
@@ -37,6 +32,16 @@ function fadeUp(delay: number, distance = 16, duration = 0.72) {
 /* ─── Component ───────────────────────────────────────────────────── */
 
 export function Hero() {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setWordIndex((i) => (i + 1) % WORDS.length),
+      2000,
+    );
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       aria-label="Introduction"
@@ -64,53 +69,104 @@ export function Hero() {
             />
           </motion.div>
 
-          {/* Name */}
-          <motion.h1
-            {...fadeUp(0.1, 20, 0.85)}
-            className="font-heading text-6xl font-bold tracking-tighter
-                       leading-[1.04] text-foreground
-                       sm:text-7xl lg:text-[5.5rem]"
+          {/* Greeting */}
+          <motion.p
+            {...fadeUp(0.1)}
+            className="font-body text-sm text-muted/60"
           >
-            SUHAIB KHAN
+            Hi, I'm Suhaib
+          </motion.p>
+
+          {/* Tagline */}
+          <motion.p
+            {...fadeUp(0.22)}
+            className="mt-3 font-mono text-[0.75rem] uppercase tracking-[0.22em]"
+            style={{ color: "#a8b8cc" }}
+          >
+            Engineer. Researcher. Builder.
+          </motion.p>
+
+          {/* Headline */}
+          <motion.h1
+            {...fadeUp(0.38, 20, 0.85)}
+            className="mt-7 font-heading font-bold tracking-tight leading-[1.1]
+                       text-foreground
+                       text-[1.75rem] sm:text-[2.5rem] lg:text-[3rem]"
+          >
+            Building Intelligent Systems<br className="hidden sm:block" /> that Compound
           </motion.h1>
 
-          {/* Roles */}
-          <motion.p
-            {...fadeUp(0.3)}
-            className="mt-5 font-mono text-[0.6875rem] uppercase
-                       tracking-[0.22em] text-muted/70
-                       sm:text-[0.75rem]"
+          {/* Rotating text */}
+          <motion.div
+            {...fadeUp(0.52)}
+            className="mt-6 flex items-baseline justify-center gap-2"
           >
-            {ROLES.join("  ·  ")}
+            {/* Static "I" — Cormorant Garamond italic, signature weight */}
+            <span
+              className="leading-none text-foreground
+                         text-[2.1rem] sm:text-[3rem] lg:text-[3.6rem]"
+              style={{
+                fontFamily: "var(--font-cormorant)",
+                fontWeight: 600,
+              }}
+            >
+              I
+            </span>
+
+            {/* Slot — font-size set here so height: 1em resolves correctly */}
+            <span
+              className="relative inline-block overflow-hidden
+                         text-[1.75rem] sm:text-[2.5rem] lg:text-[3rem]"
+              style={{ height: "1em", lineHeight: 1 }}
+            >
+              {/* Ghost: holds width of longest word */}
+              <span
+                aria-hidden
+                className="invisible font-heading font-bold tracking-tight
+                           leading-none whitespace-nowrap"
+              >
+                document
+              </span>
+
+              <AnimatePresence initial={false}>
+                <motion.span
+                  key={WORDS[wordIndex]}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: "0%", opacity: 1 }}
+                  exit={{ y: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.3, ease: EASE }}
+                  className="absolute inset-0 flex items-center justify-start
+                             font-heading font-bold tracking-tight leading-none
+                             text-muted/60 whitespace-nowrap"
+                >
+                  {WORDS[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+          </motion.div>
+
+          {/* Subtext */}
+          <motion.p
+            {...fadeUp(0.54)}
+            className="mt-5 font-body text-sm leading-relaxed text-muted/60
+                       mx-auto max-w-xs sm:max-w-sm"
+          >
+            Building products, exploring ideas, documenting the journey.
           </motion.p>
 
           {/* Rule */}
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.55, delay: 0.46, ease: EASE }}
+            transition={{ duration: 0.55, delay: 0.68, ease: EASE }}
             aria-hidden
             className="mx-auto mt-10 h-px w-8 origin-center bg-border/60"
           />
 
-          {/* Description */}
-          <div className="mx-auto mt-10 max-w-[36rem] space-y-4">
-            {DESCRIPTION.map((line, i) => (
-              <motion.p
-                key={line}
-                {...fadeUp(0.56 + i * 0.1)}
-                className="font-body text-[0.9375rem] leading-[1.75]
-                           text-foreground-secondary"
-              >
-                {line}
-              </motion.p>
-            ))}
-          </div>
-
           {/* Buttons */}
           <motion.div
-            {...fadeUp(0.92)}
-            className="mt-11 flex flex-wrap items-center justify-center gap-3"
+            {...fadeUp(0.82)}
+            className="mt-8 flex flex-wrap items-center justify-center gap-3"
           >
             <Button variant="secondary" size="md" aria-label="View resume">
               <FileText size={13} strokeWidth={1.75} />
@@ -158,7 +214,7 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.35, delay: 1.22 + i * 0.06, ease: EASE }}
-                className="font-mono text-[0.625rem] tracking-widest text-muted/30"
+                className="font-mono text-[0.625rem] tracking-widest text-muted/55"
               >
                 {word}
               </motion.span>

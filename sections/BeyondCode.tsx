@@ -86,8 +86,8 @@ export function BeyondCode() {
                   </h3>
                   <p
                     className="mt-1.5 font-body text-xs leading-relaxed
-                               text-muted/50 transition-colors duration-300
-                               group-hover:text-muted/70"
+                               text-muted/70 transition-colors duration-300
+                               group-hover:text-muted/85"
                   >
                     {item.description}
                   </p>

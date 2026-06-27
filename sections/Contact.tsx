@@ -104,14 +104,14 @@ export function Contact() {
             >
               <span className="mb-3 flex h-10 w-10 items-center justify-center
                                rounded-lg border border-white/8 bg-card
-                               text-muted/60 transition-colors duration-200
+                               text-muted/75 transition-colors duration-200
                                group-hover:border-white/14 group-hover:text-foreground-secondary">
                 {link.icon}
               </span>
 
               <span className="font-mono text-[0.6875rem] tracking-[0.18em]
-                               uppercase text-gold/55 transition-colors
-                               duration-200 group-hover:text-gold/80">
+                               uppercase text-gold/80 transition-colors
+                               duration-200 group-hover:text-gold">
                 {link.platform}
               </span>
 

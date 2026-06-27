@@ -64,9 +64,9 @@ export function Now() {
               {/* Category label */}
               <dt
                 className="w-36 shrink-0 font-mono text-[0.6875rem]
-                           tracking-[0.18em] uppercase text-gold/60
+                           tracking-[0.18em] uppercase text-gold/80
                            transition-colors duration-200
-                           group-hover:text-gold/90 sm:w-40"
+                           group-hover:text-gold sm:w-40"
               >
                 {focus.category}
               </dt>
@@ -90,7 +90,7 @@ export function Now() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.45, ease: EASE }}
-          className="mt-8 font-body text-xs text-muted/35"
+          className="mt-8 font-body text-xs text-muted/60"
         >
           Updated June 2026
         </motion.p>

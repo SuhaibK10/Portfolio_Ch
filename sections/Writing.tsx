@@ -90,7 +90,7 @@ export function Writing() {
                   >
                     {article.excerpt}
                   </p>
-                  <p className="mt-3.5 font-body text-xs text-muted/50">
+                  <p className="mt-3.5 font-body text-xs text-muted/65">
                     {article.readingTime}&ensp;·&ensp;{article.publishedAt}
                   </p>
                 </div>
