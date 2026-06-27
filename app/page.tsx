@@ -1,8 +1,8 @@
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
-import { Principles } from "@/sections/Principles";
 import { Exploring } from "@/sections/Exploring";
 import { Journey } from "@/sections/Journey";
+import { Competitions } from "@/sections/Competitions";
 import { Skills } from "@/sections/Skills";
 import { FeaturedWork } from "@/sections/FeaturedWork";
 import { Statement } from "@/sections/Statement";
@@ -16,9 +16,9 @@ export default function Home() {
     <main>
       <Hero />
       <About />
-      <Principles />
       <Exploring />
       <Journey />
+      <Competitions />
       <Skills />
       <Statement />
       <FeaturedWork />

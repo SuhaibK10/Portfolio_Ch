@@ -187,8 +187,10 @@ const CATEGORIES: Category[] = [
   {
     label: "Others",
     skills: [
-      { name: "MPI",             icon: L(Cpu, "#8A9BB0"),        color: "#8A9BB0" },
-      { name: "OpenMP",          icon: L(Cpu, "#8A9BB0"),        color: "#8A9BB0" },
+      { name: "MPI",                        icon: L(Cpu, "#8A9BB0"),        color: "#8A9BB0" },
+      { name: "OpenMP",                     icon: L(Cpu, "#8A9BB0"),        color: "#8A9BB0" },
+      { name: "High Performance Computing", icon: L(Cpu, "#8A9BB0"),        color: "#8A9BB0" },
+      { name: "Parallel Computing",         icon: L(Cpu, "#8A9BB0"),        color: "#8A9BB0" },
     ],
   },
 ];
@@ -223,7 +225,7 @@ export function Skills() {
           <SectionHeading
             eyebrow="Stack"
             title="Skills & Technologies"
-            description="Tools and technologies I work with across languages, frameworks, databases, and infrastructure."
+            description="Technologies I work with across languages, frameworks, databases, and infrastructure."
           />
         </motion.div>
 

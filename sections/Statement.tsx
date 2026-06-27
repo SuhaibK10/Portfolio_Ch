@@ -5,8 +5,7 @@ import { Container } from "@/components/Container";
 
 const LINES = [
   "Thinking about intelligence,",
-  "building with AI,",
-  "and engineering systems that matter.",
+  "and Engineering Systems that matter.",
 ] as const;
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Section } from "@/components/Section";
@@ -33,24 +34,37 @@ export function About() {
   return (
     <Section id="about">
       <Container>
-        <div
-          className="grid gap-14
-                     md:grid-cols-[200px_1fr] md:gap-20
-                     lg:grid-cols-[240px_1fr] lg:gap-28"
-        >
-          {/* ── Left: label ──────────────────────────────────────── */}
+        <div className="flex flex-col items-center text-center">
+
+          {/* ── Photo ────────────────────────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.65, ease: EASE }}
-            className="md:pt-0.5"
+            className="mb-10 w-48 overflow-hidden rounded-xl ring-1 ring-border/20"
           >
-            <SectionHeading title="About" />
+            <Image
+              src="/avatar.jpg"
+              alt="Suhaib Khan"
+              width={192}
+              height={240}
+              className="w-full object-cover"
+            />
           </motion.div>
 
-          {/* ── Right: paragraphs ─────────────────────────────────── */}
-          <div className="space-y-8">
+          {/* ── Heading ──────────────────────────────────────────── */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.65, delay: 0.05, ease: EASE }}
+          >
+            <SectionHeading title="About" align="center" />
+          </motion.div>
+
+          {/* ── Paragraphs ───────────────────────────────────────── */}
+          <div className="mt-8 max-w-2xl space-y-8">
             {PARAGRAPHS.map(({ text, emphasis }, i) => (
               <motion.p
                 key={text}

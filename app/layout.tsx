@@ -4,7 +4,6 @@ import { SmoothScrollProvider }  from "@/components/providers/SmoothScrollProvid
 import { MotionProvider }        from "@/components/providers/MotionProvider";
 import { Atmosphere }   from "@/components/Atmosphere";
 import { MouseGlow }    from "@/components/MouseGlow";
-import { ProgressBar }  from "@/components/ProgressBar";
 import { Navbar }       from "@/components/Navbar";
 import { AmbientPlayer } from "@/components/AmbientPlayer";
 import { SiteFooter }   from "@/components/SiteFooter";
@@ -27,7 +26,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}
     >
-      <body className="bg-background text-foreground font-body antialiased">
+      <body className="bg-background text-foreground font-body antialiased overflow-x-hidden">
 
         {/* Skip-to-content for keyboard / screen-reader users */}
         <a href="#main-content" className="skip-link">
@@ -42,9 +41,6 @@ export default function RootLayout({
 
             {/* z 20   neutral cursor spotlight (desktop only) */}
             <MouseGlow />
-
-            {/* z 50   1 px scroll-progress bar */}
-            <ProgressBar />
 
             {/* z 40   site navigation */}
             <Navbar />

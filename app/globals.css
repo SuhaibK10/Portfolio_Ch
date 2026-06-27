@@ -30,6 +30,7 @@ html {
   scroll-behavior: auto;
   text-rendering:  optimizeLegibility;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden !important;
 }
 
 body {
@@ -38,8 +39,9 @@ body {
   font-family:            var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin:  0;
-  padding: 0;
+  margin:    0;
+  padding:   0;
+  overflow-x: hidden !important;
 }
 
 /* ─── Lenis ──────────────────────────────────────────────────────── */

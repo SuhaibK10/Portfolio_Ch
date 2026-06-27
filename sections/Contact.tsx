@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons/BrandIcons";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -14,26 +15,30 @@ const LINKS = [
     display:  "gk4846@myamu.ac.in",
     href:     "mailto:gk4846@myamu.ac.in",
     external: false,
+    icon:     <Mail size={20} strokeWidth={1.5} />,
   },
   {
     platform: "GitHub",
     display:  "SuhaibK10",
     href:     "https://github.com/SuhaibK10",
     external: true,
+    icon:     <GitHubIcon size={20} />,
   },
   {
     platform: "LinkedIn",
     display:  "suhaibkhan",
     href:     "https://linkedin.com/in/suhaibkhan",
     external: true,
+    icon:     <LinkedInIcon size={20} />,
   },
   {
     platform: "X",
     display:  "@suhaibkhan",
     href:     "https://x.com/suhaibkhan",
     external: true,
+    icon:     <XIcon size={20} />,
   },
-] as const;
+];
 
 /* ─── Motion ────────────────────────────────────────────────────────── */
 
@@ -93,11 +98,17 @@ export function Contact() {
                   ? `${link.platform} — opens in new tab`
                   : link.platform
               }
-              className="group relative flex flex-col rounded-xl p-5
+              className="group relative flex flex-col items-center rounded-xl p-5
                          transition-colors duration-200
-                         hover:bg-white/2
-                         sm:text-center"
+                         hover:bg-white/2 text-center"
             >
+              <span className="mb-3 flex h-10 w-10 items-center justify-center
+                               rounded-lg border border-white/8 bg-card
+                               text-muted/60 transition-colors duration-200
+                               group-hover:border-white/14 group-hover:text-foreground-secondary">
+                {link.icon}
+              </span>
+
               <span className="font-mono text-[0.6875rem] tracking-[0.18em]
                                uppercase text-gold/55 transition-colors
                                duration-200 group-hover:text-gold/80">
@@ -107,7 +118,7 @@ export function Contact() {
               <span className="mt-2 font-body text-sm text-foreground-secondary
                                transition-colors duration-200
                                group-hover:text-foreground
-                               break-all sm:break-normal">
+                               break-all">
                 {link.display}
               </span>
 

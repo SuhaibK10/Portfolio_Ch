@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FileText, ArrowUpRight } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/BrandIcons";
@@ -46,6 +47,22 @@ export function Hero() {
       <div className="flex flex-1 flex-col items-center justify-center
                       px-6 py-24 text-center">
         <Container size="lg">
+
+          {/* Avatar */}
+          <motion.div
+            {...fadeUp(0.0, 12, 0.7)}
+            className="mx-auto mb-8 h-24 w-24 overflow-hidden rounded-full
+                       ring-1 ring-border/30"
+          >
+            <Image
+              src="/avatar.jpg"
+              alt="Suhaib Khan"
+              width={96}
+              height={96}
+              className="h-full w-full object-cover"
+              priority
+            />
+          </motion.div>
 
           {/* Name */}
           <motion.h1

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
@@ -8,29 +9,44 @@ import { SectionHeading } from "@/components/SectionHeading";
 /* ─── Data ─────────────────────────────────────────────────────────── */
 
 const TIMELINE = [
-  {
-    role:        "ML Intern",
-    company:     "IIT Jammu",
-    description:
-      "Worked on applied AI and generative AI workflows and practical machine learning systems.",
-  },
-  {
+    {
     role:        "Product Engineer",
     company:     "Louis Polo",
+    logo:        "/louispolo.png",
+    logoSize:    "lg" as const,
+    period:      "Sep 2025 – Apr 2026",
     description:
       "Built and deployed a complete e-commerce platform and internal inventory systems.",
   },
   {
-    role:        "Founder",
-    company:     "Weblicate",
-    description: "Shipped websites and MVPs for startups and businesses.",
-  },
-  {
     role:        "ML and Research Head",
     company:     "Faast FinTech Club",
+    logo:        "/faast.png",
+    logoSize:    "sm" as const,
+    period:      "Oct 2025 – Present",
     description:
       "Leading research and AI initiatives at the intersection of finance and technology.",
   },
+
+  {
+    role:        "ML Intern",
+    company:     "IIT Jammu",
+    logo:        "/iitjammu.png",
+    logoSize:    "xl" as const,
+    period:      "June 2025 – Aug 2025",
+    description:
+      "Worked on applied AI and generative AI workflows and practical machine learning systems.",
+  },
+
+  {
+    role:        "Founder",
+    company:     "Weblicate",
+    logo:        "/weblicate.png",
+    logoSize:    "2xl" as const,
+    period:      "Nov 2024 – Present",
+    description: "Shipped websites and MVPs for startups and businesses.",
+  },
+ 
 ] as const;
 
 /* ─── Motion ────────────────────────────────────────────────────────── */
@@ -51,11 +67,11 @@ export function Journey() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          <SectionHeading title="Journey" />
+          <SectionHeading title="Journey so far" align="center" />
         </motion.div>
 
         {/* Timeline ──────────────────────────────────────────────────── */}
-        <div className="mt-16 max-w-2xl">
+        <div className="mt-16 max-w-2xl mx-auto">
           {TIMELINE.map((entry, i) => {
             const isLast = i === TIMELINE.length - 1;
 
@@ -112,17 +128,43 @@ export function Journey() {
                   viewport={{ once: true, margin: "-30px" }}
                   transition={{ duration: 0.65, delay: 0.08, ease: EASE }}
                 >
-                  {/* Company — eyebrow label */}
-                  <p className="mb-2 font-mono text-[0.6875rem] tracking-[0.18em]
-                                uppercase text-gold/75">
-                    {entry.company}
-                  </p>
+                  {/* Company — eyebrow label with logo */}
+                  <div className="mb-2 flex items-center gap-2">
+                    <Image
+                      src={entry.logo}
+                      alt={entry.company}
+                      width={"logoSize" in entry && entry.logoSize === "xl" ? 84 : "logoSize" in entry && entry.logoSize === "2xl" ? 68 : "logoSize" in entry && entry.logoSize === "lg" ? 44 : "logoSize" in entry && entry.logoSize === "sm" ? 36 : 32}
+                      height={"logoSize" in entry && entry.logoSize === "xl" ? 84 : "logoSize" in entry && entry.logoSize === "2xl" ? 68 : "logoSize" in entry && entry.logoSize === "lg" ? 44 : "logoSize" in entry && entry.logoSize === "sm" ? 36 : 32}
+                      className={
+                        ("logoSize" in entry && entry.logoSize === "xl"
+                          ? "h-21 w-21 "
+                          : "logoSize" in entry && entry.logoSize === "2xl"
+                          ? "h-17 w-17 "
+                          : "logoSize" in entry && entry.logoSize === "lg"
+                          ? "h-11 w-11 "
+                          : "logoSize" in entry && entry.logoSize === "sm"
+                          ? "h-9 w-9 "
+                          : "h-8 w-8 ") +
+                        "rounded-md object-contain"
+                      }
+                    />
+                    <p className="font-mono text-[0.6875rem] tracking-[0.18em]
+                                  uppercase text-gold/75">
+                      {entry.company}
+                    </p>
+                  </div>
 
                   {/* Role */}
                   <h3 className="font-heading text-lg font-semibold leading-snug
                                  text-foreground md:text-xl">
                     {entry.role}
                   </h3>
+
+                  {/* Period */}
+                  <p className="mt-1 font-mono text-[0.6875rem] tracking-[0.12em]
+                                text-muted/55">
+                    {entry.period}
+                  </p>
 
                   {/* Description */}
                   <p className="mt-3 font-body text-sm leading-relaxed
