@@ -110,8 +110,8 @@ export function Contact() {
               </span>
 
               <span className="font-mono text-[0.6875rem] tracking-[0.18em]
-                               uppercase text-gold/80 transition-colors
-                               duration-200 group-hover:text-gold">
+                               uppercase text-foreground-secondary transition-colors
+                               duration-200 group-hover:text-white">
                 {link.platform}
               </span>
 

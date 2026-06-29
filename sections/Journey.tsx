@@ -155,7 +155,7 @@ export function Journey() {
                       }
                     />
                     <p className="font-mono text-[0.6875rem] tracking-[0.18em]
-                                  uppercase text-gold/75">
+                                  uppercase text-sky-300">
                       {entry.company}
                     </p>
                   </div>

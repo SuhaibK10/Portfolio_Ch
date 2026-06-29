@@ -13,8 +13,8 @@ import { Button } from "@/components/Button";
 const WORDS = ["Think", "Research", "Write", "Code", "Deploy", "Document"] as const;
 
 const MANIFESTO = [
-  "Think.", "Write.", "Engineer.", "Code.",
-  "Build.", "Document.", "Deploy.", "Repeat.",
+  "I Think.", "I Research.","I Write.",  "I Engineer.", "I Code.", "I Deploy.", 
+  "I Document.",
 ] as const;
 
 /* ─── Motion ──────────────────────────────────────────────────────── */

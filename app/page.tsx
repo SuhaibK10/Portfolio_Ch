@@ -8,7 +8,6 @@ import { Skills } from "@/sections/Skills";
 import { FeaturedWork } from "@/sections/FeaturedWork";
 import { Statement } from "@/sections/Statement";
 import { Writing } from "@/sections/Writing";
-import { Now } from "@/sections/Now";
 import { BeyondCode } from "@/sections/BeyondCode";
 import { Contact } from "@/sections/Contact";
 
@@ -25,7 +24,6 @@ export default function Home() {
       <Skills />
       <Statement />
       <Writing />
-      <Now />
       <BeyondCode />
       <Contact />
     </main>
