@@ -2,7 +2,23 @@
   "permissions": {
     "allow": [
       "Bash(npx eslint *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(strings \"/Users/suhaibkhan/Downloads/Suhaib_Resume_.pdf\" | grep -i \"URI\" | head -50)",
+      "Read(//Users/suhaibkhan/Downloads/**)",
+      "Bash(python3)",
+      "Bash(cp \"/Users/suhaibkhan/Downloads/Suhaib_Resume_.pdf\" \"/Users/suhaibkhan/Portfolio_ch/public/resume.pdf\" && ls -la /Users/suhaibkhan/Portfolio_ch/public/resume.pdf)",
+      "Bash(curl -s \"https://jaysingh.vercel.app\" -A \"Mozilla/5.0\")",
+      "Bash(curl -s \"https://jaysingh.vercel.app/style.css\" -A \"Mozilla/5.0\" -o /tmp/jaysingh.css)",
+      "Bash(kill 91037 91038)",
+      "Bash(disown)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(kill 9765 9767)",
+      "Bash(curl -s -o /dev/null -w \"home: %{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(curl -s http://localhost:3000/writing)",
+      "Bash(curl -s -o /dev/null -w \"writing post: %{http_code}\\\\n\" \"http://localhost:3000/writing/software-development-is-changing\")"
+    ],
+    "additionalDirectories": [
+      "/Users/suhaibkhan/Downloads"
     ]
   }
 }
